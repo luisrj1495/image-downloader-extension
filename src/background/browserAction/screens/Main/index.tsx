@@ -12,6 +12,7 @@ import {
   NavbarStyled,
   ImgExtensionStyled,
   ImgDimensionsStyled,
+  CountStyled,
 } from "./styles";
 
 // Utils
@@ -24,7 +25,7 @@ import { ImagesMetaType } from "./types";
 import {
   ImagesStateType,
   SendImagesResType,
-} from "../../../../common/types/Images";
+} from "common/types/Images";
 
 const Main = () => {
   const [images, setImages] = useState<ImagesStateType[]>([]);
@@ -84,8 +85,6 @@ const Main = () => {
         msg: "",
       });
       const currentTab = await getCurrentTab();
-      console.log({ currentTab });
-      chrome.windows.getCurrent(console.log);
       chrome.tabs.sendMessage(
         currentTab.id!,
         {
@@ -99,7 +98,6 @@ const Main = () => {
             status: "loaded",
             msg: "",
           });
-          console.log({ response });
         }
       );
     } catch (e) {
@@ -120,10 +118,17 @@ const Main = () => {
       }}
     >
       <NavbarStyled>
-        <h1>
-          Download Images |{" "}
-          <strong style={{ marginLeft: 4 }}> Found {data.length}</strong>
-        </h1>
+        <h1 style={{ textAlign: "center" }}>Download Images</h1>
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=luisrj1495&repo=image-downloader-extension&type=star&count=true"
+          frameBorder="0"
+          scrolling="0"
+          width="80"
+          height="20"
+          title="GitHub"
+          style={{ margin: "0 auto" }}
+        />
+        <CountStyled>{data.length} Images</CountStyled>
       </NavbarStyled>
 
       {!data.length && <NoImages />}

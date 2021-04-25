@@ -6,8 +6,7 @@ console.log("Loaded!😎");
 
 window.addEventListener(
   "scroll",
-  debounce((ev) => {
-    console.log(ev);
+  debounce(() => {
     const payload = getImages().reduce((acc, img) => {
       acc[img.url] = img;
       return acc;

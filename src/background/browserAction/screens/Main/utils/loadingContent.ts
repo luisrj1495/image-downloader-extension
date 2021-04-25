@@ -1,4 +1,4 @@
-import { ImagesStateType } from "../../../../../common/types/Images";
+import { ImagesStateType } from "common/types/Images";
 
 export const loadingContent: ImagesStateType[] = Array.from({
   length: 5,
@@ -8,4 +8,5 @@ export const loadingContent: ImagesStateType[] = Array.from({
   type: "img",
   height: 300,
   width: 300,
+  extension: "jpg",
 }));

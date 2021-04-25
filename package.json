@@ -5,8 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "rm -rf ./dist &&  webpack --config webpack-config --env dev --watch"
+    "dev": "rm -rf ./dist &&  webpack --config webpack-config --env dev --watch",
+    "build": "webpack --config webpack-config --env prod"
   },
+  "repository": "https://github.com/luisrj1495/image-downloader-extension",
   "devDependencies": {
     "@types/react": "^17.0.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",

@@ -61,22 +61,17 @@ export const ItemStyled = styled.a<{
 export const ImageStyled = styled.img`
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 `;
 
 export const NavbarStyled = styled.nav`
+  position: relative;
   display: grid;
   background-color: #fff;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem;
   margin-bottom: 0.5rem;
   box-shadow: 0 0 12px 0 rgb(0 0 0 / 6%);
-
-  h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const NoImagesContainerStyled = styled.div`
@@ -110,4 +105,17 @@ export const ImgDimensionsStyled = styled.div`
   line-height: 15px;
   font-weight: 600;
   width: 100%;
+`;
+
+export const CountStyled = styled.strong`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 4px;
+  background-color: #fc687b;
+
+  color: #fff;
+  font-size: 0.8rem;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius 12px;
 `;

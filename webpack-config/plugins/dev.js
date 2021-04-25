@@ -4,6 +4,8 @@ const webpack = require('webpack');
 module.exports = () => {
     return [
         // new BundleAnalyzerPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin({
+            
+        })
     ]
 }

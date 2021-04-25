@@ -12,7 +12,6 @@ const plugins = require("./plugins")
  */
 
 module.exports = (env) => {
-    console.log(env)
     const mode = env.dev ? "development" : "production"
 
     return {
@@ -28,6 +27,11 @@ module.exports = (env) => {
         plugins: plugins(mode),
         resolve: {
             extensions: [".js", ".ts", ".json", ".jsx", ".tsx"],
+            alias: {
+                common: path.resolve(__dirname, "../src/common/"),
+                background: path.resolve(__dirname, '../src/background/'),
+                "content-script": path.resolve(__dirname, '../src/content-script/'),
+            },
         },
     }
 
