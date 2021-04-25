@@ -19,7 +19,7 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "types": ["chrome", "react"],
+    "types": ["chrome", "react", "jest", "node"],
     "jsx": "react",
     "resolveJsonModule": true,
     "baseUrl": "./src",

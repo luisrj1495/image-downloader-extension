@@ -12,7 +12,7 @@ export const getImg = (customDocument: Document) => {
   const imagesSet = new Set();
 
   for (let img of imagesElements) {
-    if (img.src && img.width && img.height) {
+    if (img.src) {
       const dimensions = getDimensions(img.src);
       const extension = getImgExtension(img.src);
 
