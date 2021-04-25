@@ -1,0 +1,29 @@
+{
+  "name": "images-extension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "rm -rf ./dist &&  webpack --config webpack-config --env dev --watch"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "@testing-library/react": "^11.2.6",
+    "@types/chrome": "^0.0.134",
+    "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "ts-loader": "^8.2.0",
+    "webpack": "^5.33.2",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.2.3",
+    "typescript": "^4.2.4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Image downloader",
+  "version": "0.0.1",
+  "description": "Download images from any web page",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "app.html"
+  },
+  "background": {
+    "scripts": []
+  },
+  "content_scripts": [
+    {
+      "js": ["image-page.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["cookies", "tabs", "tabCapture"],
+  "optional_permissions": [],
+  "icons": {
+    "128": "assets/icons/logo_128.png",
+    "256": "assets/icons/logo_256.png",
+    "512": "assets/icons/logo_512.png"
+  }
+}

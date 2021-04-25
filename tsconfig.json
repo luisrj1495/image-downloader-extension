@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "alwaysStrict": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "types": ["chrome", "react"],
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "background/*": ["background/*"],
+      "content-script/*": ["content-script/*"],
+      "common/*": ["common/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}
