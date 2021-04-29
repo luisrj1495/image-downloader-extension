@@ -16,7 +16,7 @@
     }
   ],
   "permissions": ["cookies", "tabs", "tabCapture"],
-  
+
   "optional_permissions": [],
   "icons": {
     "128": "assets/icons/logo_128.png",
