@@ -1,7 +1,3 @@
-
-
 module.exports = () => {
-    return [
-
-    ]
-}
+    return [];
+};

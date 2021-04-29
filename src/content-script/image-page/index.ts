@@ -5,27 +5,27 @@ import { getImages } from "./utils/getImages";
 console.log("Loaded!😎");
 
 window.addEventListener(
-  "scroll",
-  debounce(() => {
-    const payload = getImages().reduce((acc, img) => {
-      acc[img.url] = img;
-      return acc;
-    }, {});
+    "scroll",
+    debounce(() => {
+        const payload = getImages().reduce((acc, img) => {
+            acc[img.url] = img;
+            return acc;
+        }, {});
 
-    chrome.runtime.sendMessage({
-      type: ACTIONS.SEND_IMAGES,
-      payload,
-    });
-  })
+        chrome.runtime.sendMessage({
+            type: ACTIONS.SEND_IMAGES,
+            payload,
+        });
+    }),
 );
 
 chrome.runtime.onMessage.addListener(function (request, _sender, sendResponse) {
-  switch (request?.type) {
-    case ACTIONS.GET_IMAGES: {
-      return sendResponse(getImages());
-    }
+    switch (request?.type) {
+        case ACTIONS.GET_IMAGES: {
+            return sendResponse(getImages());
+        }
 
-    default:
-      break;
-  }
+        default:
+            break;
+    }
 });
