@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest --logHeapUsage",
     "test:cover": "jest --coverage",
+    "test:tsc": "tsc --noEmit -p ./tsconfig.json --skipLibCheck",
     "start": "webpack serve --config config/webpack.dev.js --env dev",
     "build": "webpack --config config/webpack.prod.js",
     "lint": "eslint --ext js,ts,tsx -f codeframe --cache"
@@ -52,11 +53,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:tsc"
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "**/*.{ts,tsx,js,jsx}": [
       "yarn lint --cache",
       "yarn test --silent --findRelatedTests"
     ]
