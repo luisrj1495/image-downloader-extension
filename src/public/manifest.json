@@ -1,5 +1,5 @@
 {
-  "name": "Image downloader",
+  "name": "Global Image downloader",
   "version": "0.0.1",
   "description": "Download images from any web page",
   "manifest_version": 2,

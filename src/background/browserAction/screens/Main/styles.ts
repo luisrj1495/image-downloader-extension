@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { colorStyles } from "common/styles/variables/colors";
+
 export const ContainerImagesStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(140px, 1fr));
@@ -66,11 +68,11 @@ export const ImageStyled = styled.img`
 
 export const NavbarStyled = styled.nav`
   position: relative;
-  display: grid;
-  background-color: #fff;
+  display: flex;
+  background-color: ${colorStyles.white};
   gap: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
   box-shadow: 0 0 12px 0 rgb(0 0 0 / 6%);
 `;
 
@@ -89,10 +91,11 @@ export const ImgExtensionStyled = styled.span`
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fc687b;
-  padding: 5px;
-  border-radius: 4px;
-  color: #fff;
+  background-color: ${colorStyles.greenLight};
+  padding: 0 8px 0 8px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  color: ${colorStyles.white};
   font-size: 0.8rem;
   text-transform: uppercase;
 `;
@@ -110,13 +113,32 @@ export const ImgDimensionsStyled = styled.div`
 
 export const CountStyled = styled.strong`
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
-  padding: 4px;
-  background-color: #fc687b;
-
+  background-color: ${colorStyles.greenLight};
   color: #fff;
-  font-size: 0.8rem;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius 12px;
+  font-size: 0.7rem;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 0 8px 0 8px;
+`;
+
+export const TitleContainerStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 10px;
+  flex: 1;
+
+  h1 {
+    color: ${colorStyles.green};
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+`;
+
+export const MainContainerStyled = styled.div`
+  min-width: 600px;
+  background-color: ${colorStyles.gray};
 `;

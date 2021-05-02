@@ -1,7 +1,6 @@
 {
   "name": "images-extension",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -9,7 +8,7 @@
     "test:cover": "jest --coverage",
     "test:tsc": "tsc --noEmit -p ./tsconfig.json --skipLibCheck",
     "start": "webpack serve --config config/webpack.dev.js --env dev",
-    "build": "webpack --config config/webpack.prod.js",
+    "build": "webpack --config config/webpack.prod.js --env prod",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "repository": "https://github.com/luisrj1495/image-downloader-extension",

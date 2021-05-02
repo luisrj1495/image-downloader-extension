@@ -2,32 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 16px;
   color: #494949;
   line-height: 24px;
   scroll-behavior: smooth;
-}
-
-h1 {
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-
-button {
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 6px;
-  color: #433af6;
-  cursor: pointer;
-  transition: ease 500ms;
-  border: none;
-  padding: 5px 10px 5px 10px;
-  background-color: transparent;
-  border: 1px solid #433af6;
-}
-
-button:hover {
-  background-color: #433af6cb;
-  color: #fff;
 }

@@ -15,6 +15,7 @@ const devConfig = {
     compress: true,
     port: 9000,
     writeToDisk: true,
+    disableHostCheck: true,
   },
 };
 
@@ -24,6 +25,5 @@ const devConfig = {
  * @param {Boolean} env.dev - Development flag
  */
 module.exports = (env) => {
-  console.log(env);
   return merge(common(env.dev), devConfig);
 };

@@ -13,6 +13,8 @@ import {
   ImgExtensionStyled,
   ImgDimensionsStyled,
   CountStyled,
+  TitleContainerStyled,
+  MainContainerStyled,
 } from "./styles";
 
 // Utils
@@ -27,7 +29,7 @@ import { ImagesStateType, SendImagesResType } from "common/types/Images";
 const Main = () => {
   const [images, setImages] = useState<ImagesStateType[]>([]);
   const [metaImages, setMetaImages] = useState<ImagesMetaType>({
-    status: "idle",
+    status: "loading",
     msg: "",
   });
 
@@ -63,7 +65,9 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    getImages();
+    setTimeout(() => {
+      getImages();
+    }, 1500);
 
     return () => {
       // Remove the url created in the svg elements
@@ -77,10 +81,6 @@ const Main = () => {
 
   const getImages = async () => {
     try {
-      setMetaImages({
-        status: "loading",
-        msg: "",
-      });
       const currentTab = await getCurrentTab();
       chrome.tabs.sendMessage(
         currentTab.id!,
@@ -108,23 +108,21 @@ const Main = () => {
   const data = metaImages.status === "loading" ? loadingContent : images;
 
   return (
-    <div
-      style={{
-        minWidth: 600,
-        backgroundColor: "#f5f5f5",
-      }}
-    >
+    <MainContainerStyled>
       <NavbarStyled>
-        <h1 style={{ textAlign: "center" }}>Download Images</h1>
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=luisrj1495&repo=image-downloader-extension&type=star&count=true"
-          frameBorder="0"
-          scrolling="0"
-          width="80"
-          height="20"
-          title="GitHub"
-          style={{ margin: "0 auto" }}
-        />
+        <img src="/assets/icons/logo_64.png" style={{ maxHeight: 50 }} alt="logo" />
+        <TitleContainerStyled>
+          <h1>Global Image Download</h1>
+          <iframe
+            src="https://ghbtns.com/github-btn.html?user=luisrj1495&repo=image-downloader-extension&type=star&count=true"
+            frameBorder="0"
+            scrolling="0"
+            width="80"
+            height="20"
+            title="GitHub"
+            style={{ margin: "0 auto" }}
+          />
+        </TitleContainerStyled>
         <CountStyled>{data.length} Images</CountStyled>
       </NavbarStyled>
 
@@ -148,7 +146,7 @@ const Main = () => {
           </LoadingContent>
         ))}
       </ContainerImagesStyled>
-    </div>
+    </MainContainerStyled>
   );
 };
 

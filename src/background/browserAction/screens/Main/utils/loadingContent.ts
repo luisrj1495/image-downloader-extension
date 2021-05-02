@@ -1,7 +1,7 @@
 import { ImagesStateType } from "common/types/Images";
 
 export const loadingContent: ImagesStateType[] = Array.from({
-  length: 5,
+  length: 6,
 }).map((_, i) => ({
   url: i + "-url",
   id: i + "-id",

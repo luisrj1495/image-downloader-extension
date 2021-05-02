@@ -2,12 +2,16 @@ const { merge } = require("webpack-merge");
 
 const common = require("./webpack.common");
 
-/**
- * @type {import('webpack').Configuration}
- */
 const prodConfig = {
   mode: "production",
-  target: "browserlist",
+  target: "browserslist",
 };
 
-module.exports = merge(common(), prodConfig);
+/**
+ * @param {Object} env - Build environment flag. Can either be set to prod or dev
+ * @param {Boolean} env.prod - Production flag
+ * @param {Boolean} env.dev - Development flag
+ */
+module.exports = (env) => {
+  return merge(common(env.dev), prodConfig);
+};
