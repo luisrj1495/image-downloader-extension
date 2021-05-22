@@ -3,6 +3,8 @@
 It is a extension to download images from any web site, so if you have any
 idea, feature, fix or anything to improve it, feel free to fork it.
 
+[Chrome extension link](https://chrome.google.com/webstore/detail/global-image-downloader/idfidomcjfggfmmdgcjikdpdkoejdcml?hl=es&authuser=0)
+
 ### [How to run it?](#how-to-run-it)
 
 - Install the dependencies using `yarn` or `npm install`

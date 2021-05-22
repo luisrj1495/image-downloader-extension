@@ -1,7 +1,4 @@
-export const getDimensions = (url: string) => {
-  const match = /([0-9]+x[0-9]+)/i.exec(url);
-
-  if (!match) return undefined;
-  const [width, height] = match[0].toLocaleLowerCase().split("x");
-  return { width: +width, height: +height };
-};
+export const getDimensions = (image: HTMLImageElement) => ({
+  width: image.naturalWidth || image.width,
+  height: image.naturalHeight || image.height,
+});

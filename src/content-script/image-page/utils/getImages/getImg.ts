@@ -11,14 +11,14 @@ export const getImg = (customDocument: Document) => {
 
   for (const img of imagesElements) {
     if (img.src) {
-      const dimensions = getDimensions(img.src);
+      const { width, height } = getDimensions(img);
       const extension = getImgExtension(img.src);
 
-      if (!imagesSet.has(img.src) && extension) {
+      if (!imagesSet.has(img.src) && width > 50 && height > 50) {
         imagesToReturn.push({
           type: "img",
-          width: dimensions?.width || img.width || 200,
-          height: dimensions?.height || img.height || 200,
+          width,
+          height,
           url: img.src,
           extension,
           alt: img.alt || "",

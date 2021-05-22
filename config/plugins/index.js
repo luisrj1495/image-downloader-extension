@@ -59,10 +59,6 @@ module.exports = (isDev) => {
             // Set the version
             manifestJSON.version = VERSION;
 
-            if (isDev) {
-              manifestJSON["content_security_policy"] = "script-src 'self' 'unsafe-eval'; object-src 'self'";
-            }
-
             return JSON.stringify(manifestJSON, null, 2);
           },
         },

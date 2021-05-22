@@ -10,6 +10,7 @@ const paths = require("./paths");
 const devConfig = {
   mode: "development",
   target: "web",
+  devtool: "cheap-module-source-map",
   devServer: {
     contentBase: paths.appBuild,
     compress: true,
